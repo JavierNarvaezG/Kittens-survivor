@@ -132,7 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 420110610}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Prop Location 1
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
@@ -163,7 +163,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 530846272}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Prop Location 2
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
@@ -347,7 +347,7 @@ GameObject:
   m_Component:
   - component: {fileID: 761625559}
   - component: {fileID: 761625558}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GridTerrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -382,6 +382,60 @@ Transform:
   - {fileID: 1629756012}
   m_Father: {fileID: 1619565673}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &858063687
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 858063689}
+  - component: {fileID: 858063688}
+  m_Layer: 0
+  m_Name: MapController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &858063688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 858063687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ead0459a08f5c04e92cc19469feff85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  terrainChunks: []
+  player: {fileID: 1554099034}
+  checkerRadius: 0.2
+  noTerrainPosition: {x: 0, y: 0, z: 0}
+  terrainMask:
+    serializedVersion: 2
+    m_Bits: 64
+  currentChunk: {fileID: 1619565672}
+  spawnedChunks: []
+  maxOpDist: 0
+--- !u!4 &858063689
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 858063687}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &930013866
 GameObject:
   m_ObjectHideFlags: 0
@@ -391,7 +445,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 930013867}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Prop Location 6
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
@@ -474,6 +528,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c2e3b563d9fb294fa7d96f34f07187a, type: 3}
+--- !u!1 &1554099034 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2812770097293329397, guid: 4c2e3b563d9fb294fa7d96f34f07187a, type: 3}
+  m_PrefabInstance: {fileID: 1482790655}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1554099041 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6557599493791223192, guid: 4c2e3b563d9fb294fa7d96f34f07187a, type: 3}
@@ -488,7 +547,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1604305109}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Prop Location 3
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
@@ -520,7 +579,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1619565673}
   - component: {fileID: 1619565674}
-  m_Layer: 0
+  - component: {fileID: 1619565675}
+  m_Layer: 6
   m_Name: TerrainChunk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -573,6 +633,51 @@ MonoBehaviour:
   - {fileID: 3498508349522804659, guid: 1ae39064fd9029448a2cef2ce16d93b6, type: 3}
   - {fileID: 7994247315775619599, guid: d3673294d3f019b48bfba063804b23c3, type: 3}
   - {fileID: 7112095154106738811, guid: 430ce73c4ead3794f8522ddaed498a09, type: 3}
+--- !u!61 &1619565675
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1619565672}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 20, y: 20}
+  m_EdgeRadius: 0
 --- !u!1 &1626134674
 GameObject:
   m_ObjectHideFlags: 0
@@ -582,7 +687,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1626134675}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Prop Location 5
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
@@ -615,7 +720,7 @@ GameObject:
   - component: {fileID: 1629756012}
   - component: {fileID: 1629756014}
   - component: {fileID: 1629756013}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GroundTerrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4797,7 +4902,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1634943290}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Prop Location 4
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
@@ -4828,7 +4933,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1873428253}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Props
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4863,3 +4968,4 @@ SceneRoots:
   - {fileID: 703252869}
   - {fileID: 1619565673}
   - {fileID: 1482790655}
+  - {fileID: 858063689}
