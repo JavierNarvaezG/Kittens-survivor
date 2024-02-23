@@ -15,6 +15,6 @@ public class YarnController : WeaponController
         base.Attack();
         GameObject spawnedYarn = Instantiate(prefabs);
         spawnedYarn.transform.position = transform.position; //Assign the position to be the same as this object which is parented to the player
-        spawnedYarn.GetComponent<Yarn>().DirectionChecker(m.moveDir); //Reference and set the direction
+        spawnedYarn.GetComponent<Yarn>().DirectionChecker(m.lastMovedVector); //Reference and set the direction
     }
 }
