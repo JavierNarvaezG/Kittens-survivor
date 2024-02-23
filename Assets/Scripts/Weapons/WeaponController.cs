@@ -16,12 +16,15 @@ public class WeaponController : MonoBehaviour
     public float currentCooldown;
     public float pierce;
 
+    protected Movement m;
+
     // Start is called before the first frame update   
     //The protected keyword is another visibility state, similar to public, but it only allows accessibility to the child class from outside
     //the virtual keyword allows override an method, property, indexer or event declaration on any child class
     //i use this metod be cause i want to try using an "security" metod and saw the limits using this accessibility states.
     protected virtual void Start()
     {
+        m = FindObjectOfType<Movement>();
         currentCooldown = cooldownDuration; //At the start set the current cooldown to be the cooldown duration
     }
 
